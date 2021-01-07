@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * Crear un array de 11 ints. Pedir al usuario que introduzca valores entre 0 y 10. Cada vez que introduzca un dígito, añadir uno al valor en esa posición del array.
+        * Si por ejemplo introduce un 3, sumar uno a la posición 3. Mostrar en pantalla los valores. Si introduce un número mayor que 10, decir que ese número es incorrecto.
+        * Si introduce un número negativo, mostrar en pantalla el número de cada posición y el valor que contiene. Por ejemplo, si introduce 7, 7, 7, 5, 6, 5, 9, 9, 10, -1 mostrar:
+        * 0
+        * 1	0
+        * 2	0
+        * 3	0
+        * 4	0
+        * 5	2
+        * 6	1
+        * 7	3
+        * 9	2
+        * 10 1
+        */
+        let contArray = [];
+        contArray.length = 11;
+        for (let i = 0; i < contArray.length; i++){
+            contArray[i] = i + " " + 0;      
+        }
+
+        do{ 
+            let num = parseInt(prompt("Introduce un valor entre 0 y 10"));
+            if (num > 10){
+                alert("Número incorrecto! Introduce cualquier caracter para salir");
+            } 
+            else if (num < 0){
+                console.clear();
+                for (let i = 0; i < contArray.length; i++){
+                    console.log(contArray[i]);      
+                }
+            } else {  //si el valor es <=10
+                let whiteSpace = contArray[num].indexOf(' ');
+                let value = parseInt(contArray[num].substring(whiteSpace));
+                value++;
+                contArray[num] = num + " " + value;
+            }
+        } while (true);
+
+//-----------------------------------------------------------------------------------
+
+// Otras formas
+
+// let tabla = [];        // for (let i = 0; i < 11; i++) {
+        //     tabla[i] = i + " " + 0;
+        // }        // let exit = false;        // while(exit === false){
+        //     let numero = parseInt(prompt("Introduce un número:"));
+        //     if(numero > 10){
+        //         console.log("Error. El numero tiene que ser 10 o menor que 10.")
+        //     } else if(numero < 0){
+        //         console.clear();
+        //         for (let i = 0; i < tabla.length; i++) {
+        //             console.log(tabla[i])
+        //         }
+        //         exit = true;
+        //     } else {
+        //         let whiteSpace = tabla[numero].indexOf(" ");
+        //         let value = parseInt(tabla[numero].substring(whiteSpace));
+        //         value++;
+        //         tabla[numero] = numero + " " + value;
+        //         // console.clear();
+        //         // for (let i = 0; i < tabla.length; i++) {
+        //         //     console.log(tabla[i])
+        //         // }
+        //     }
+        // }        //--------------------------------------------------        // let arraynumeros = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];            
+        // let numeroRecibido;
+        // let seguirPreguntando = true;        // while (seguirPreguntando){    //mientras me den valores positivos 
+        //     // pedir numero
+        //     numeroRecibido = prompt("Introduzca un número del 0 al 10");
+        //     //comprobar que el numero es valido
+        //     if (numeroRecibido > 10){
+        //         alert("Introduzca un número igual o menor que 10.")      
+        //     }else if(numeroRecibido < 0){
+        //         seguirPreguntando=false;
+        //     }else{
+        //         //incrementar el valor que me han dicho en el array
+        //         arraynumeros[numeroRecibido] = arraynumeros[numeroRecibido] + 1 
+        //     }               
+        // } 
+        // console.table(arraynumeros);        //--------------------------------------------------        // let counters = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+        // let num = Number.MAX_VALUE;
+        // do { 
+        //     num = parseInt(prompt("Introduce un número:"));
+        //     if (num > 10 || isNaN(num)) {
+        //         alert("Valor erroneo, número máximo 10")
+        //     }
+        //     else{
+        //         counters[num]++;
+        //     }
+        // } while(num >= 0 || isNaN(num));
+        // console.table(counters);        //--------------------------------------------------        // let valor = parseInt(prompt("Introce un numero de 0 al 10"));//Pedimos un numero del 0 al 10 al ususario.
+        // let numeros = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];//Creamos un array para ir modificandolo.
+        // let contador = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Creamos un array que haga de contador.
+        // for (let i = 0; i < contador.length; i++) {//creamos un bucle para recorrer los 2 arrays.
+        //     for (let h = 0; h < contador.length; h++) {//creamos un bucle para recorrer los 2 arrays.
+        //         if (valor < 0) {//si el valor del usurio es menor de 0.
+        //             break;//Si el valor es menor que 0,paramos el programa.
+        //         }
+        //         else if (valor > 10) {//Si el valor es mayor que 10,mostramos en pantalla y en consola "El numero es incorrecto"
+        //             window.alert("El numero es incorrecto");//mostramos al usuario que el numero es incorrecto.
+        //         }
+        //         else// if (valor <= 10){//si el valor es menor que 10 
+        //             numeros[valor] += contador[1];//Sumamos al indice del array +1.
+        //         valor = parseInt(prompt("Introce un numero de 0 al 10"));//volvemos a pedir al usuario que inserte un numero.
+        //     }
+        //     console.log((contador[i]), (numeros[i]));//mostramos en consola los 2 arrays.
+        // }        //--------------------------------------------------        let arrayInit = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+
+    </script>
+</body>
+
+</html>
